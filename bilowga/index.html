@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geesh Electronics</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Xayeysiiska Socda ee Sare (Promo Ticker Bar) -->
+    <div class="promo-ticker-bar">
+        <div class="promo-ticker-content">
+            <span>🔥 Ku soo dhawow <span class="logo-text-inline"><span class="Geesh">Geesh</span> <span class="Electronics">Electronics</span></span> - Hel alaabtii ugu dambeysay!</span>
+            <span>🚀 Keenista waa lacag la'aan gudaha magaalada!</span>
+            <span>⚡ Dalbo Hadda oo hel qiimo dhimis gaar ah!</span>
+        </div>
+    </div>
+
+    <!-- Navigation / Header -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo"><span class="Geesh">Geesh</span> <span class="Electronics">Electronics</span></h1>
+
+            <!-- Live Search Box -->
+            <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="search-input" placeholder="Raadi alaab (tusaale: HP, Samsung)...">
+            </div>
+
+            <!-- Cart Button -->
+            <button id="cart-btn" class="cart-btn">
+                <i class="fa-solid fa-shopping-cart"></i> Sanduuqa <span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" style="position: relative;">
+        <!-- Badhanka Xayeysiiska ee Boodboodaya (Floating Badge) -->
+        <div class="promo-floating-badge">
+            <i class="fa-solid fa-fire"></i> Qiimo Dhimis: Ilaa 20% Off!
+        </div>
+
+        <div class="container">
+            <h2 class="hero-heading">Hel Qalabka Elektarooniga ah ee Ugu Tayada Sareeya</h2>
+            <p class="hero-subtext">Qiimo jaban, oo ku raaligaliya oo casri ah, iyo dammaanad buuxda.</p>
+        </div>
+    </header>
+
+    <!-- Category Filter Buttons -->
+    <div class="container category-filter-container">
+        <button class="filter-btn active" data-category="all">Dhammaan</button>
+        <button class="filter-btn" data-category="laptop">Laptops</button>
+        <button class="filter-btn" data-category="phone">Phones</button>
+        <button class="filter-btn" data-category="accessory">Accessories</button>
+    </div>
+
+    <!-- Products Section -->
+    <main class="products-section">
+        <div class="container grid" id="products-grid"></div>
+    </main>
+
+    <!-- Cart Modal Overlay -->
+    <div class="cart-modal-overlay" id="cart-modal-overlay"></div>
+
+    <!-- Cart Sidebar / Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>Sanduuqaaga Iibsiga</h3>
+            <button id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart-msg">Sanduuqa waa madhan yahay xilligan.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-container">
+                <span>Isku-geynta:</span>
+                <span id="total-price">$0</span>
+            </div>
+            <button id="whatsapp-checkout-btn" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> Ka Dalbo WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col footer-about">
+                <h3 class="footer-logo"><span class="Geesh">Geesh</span> <span class="Electronics">Electronics</span></h3>
+                <p>Suuqa aad ku heli karto qalabka elektarooniga ah ee ugu tayada sareeya iyo qiimaha ugu jaban magaalada.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://wa.me/252634548636" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Xiriirro Degdeg ah</h4>
+                <ul>
+                    <li><a href="#products-grid">Alaabta</a></li>
+                    <li><a href="#">Nagu Saabsan</a></li>
+                    <li><a href="#">Xaaladda Dalabka</a></li>
+                    <li><a href="#">Su'aalaha Badanaa La Isweydiiyo</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Qaybaha</h4>
+                <ul>
+                    <li><a href="#" data-category="laptop">Laptops</a></li>
+                    <li><a href="#" data-category="phone">Phones</a></li>
+                    <li><a href="#" data-category="accessory">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Nala Soo Xiriir</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Hargeisa, Somaliland</p>
+                <p><i class="fa-solid fa-phone"></i> +252634548636</p>
+                <p><i class="fa-solid fa-envelope"></i> info@geeshelectronics.com</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> <span class="Geesh">Geesh</span> <span class="Electronics">Electronics</span>. Dhammaan Xuquuqda way Dhawrsan Yihiin.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- ALAABTA (PRODUCTS) - 60 xabo                   -->
+    <!-- SI AAD SAWIRKA UGU BADALO: geli sawirradaada   -->
+    <!-- buuxda oo dhamaystiran folder-ka "images/"     -->
+    <!-- oo u magacee: 1.jpg, 2.jpg, 3.jpg ... 60.jpg   -->
+    <!-- Tusaale: images/1.jpg wuxuu badalayaa alaabta  -->
+    <!-- 1aad ee liiska hoose (HP Core i7). Wax kale ha  -->
+    <!-- ka taaban koodhka.                              -->
+    <!-- ============================================= -->
+    <script>
+        const baseTitles = [
+            'HP Core i7', 'Samsung S26', 'Sony Camera', 'Xiaomi mi 1860', 'iPhone 19',
+            'Insta 360 luna Ultra', 'Mini drone', 'Google Pixel 8', 'JBL Speaker', 'MacBook Air',
+            'OnePlus 12', 'Razer Keyboard', 'Lenovo ThinkPad', 'Xiaomi 14', 'Anker PowerBank',
+            'Microsoft Surface', 'Nokia G42', 'SteelSeries Headset', 'MSI Gaming', 'Oppo Find X7',
+            'Samsung Monitor', 'Acer Swift', 'Vivo X100', 'Apple Watch', 'Huawei MateBook',
+            'Motorola Edge', 'Fitbit Tracker', 'LG Gram', 'Nothing Phone', 'Corsair RAM'
+        ];
+        const baseCategories = [
+            'laptop', 'phone', 'accessory', 'laptop', 'phone',
+            'accessory', 'laptop', 'phone', 'accessory', 'laptop',
+            'phone', 'accessory', 'laptop', 'phone', 'accessory',
+            'laptop', 'phone', 'accessory', 'laptop', 'phone',
+            'accessory', 'laptop', 'phone', 'accessory', 'laptop',
+            'phone', 'accessory', 'laptop', 'phone', 'accessory'
+        ];
+        const basePrices = [
+            450, 250, 45, 90, 1900, 300, 1200, 700, 120, 1300,
+            650, 80, 800, 500, 60, 950, 200, 90, 1500, 750,
+            300, 600, 600, 400, 1000, 450, 150, 1100, 550, 70
+        ];
+
+        // Waxaa la abuuray 60 alaab, oo ku salaysan 30-ka aasaasiga ah (laba kol oo la geeyay).
+        const products = [];
+        for (let i = 0; i < 60; i++) {
+            const baseIndex = i % baseTitles.length;
+            const round = Math.floor(i / baseTitles.length) + 1; // 1 ama 2
+            const title = round > 1 ? `${baseTitles[baseIndex]} (${round})` : baseTitles[baseIndex];
+
+            products.push({
+                title: title,
+                price: basePrices[baseIndex] + (round > 1 ? 20 : 0),
+                category: baseCategories[baseIndex],
+                image: `images/${i + 1}.jpg` // <-- HALKAN AYAAD SAWIRKA UGU BADALAYSAA
+            });
+        }
+
+        const grid = document.getElementById('products-grid');
+
+        products.forEach(item => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.dataset.title = item.title;
+            productCard.dataset.price = item.price;
+            productCard.dataset.category = item.category;
+
+            productCard.innerHTML = `
+                <div class="img-box">
+                    <img src="${item.image}" alt="${item.title}">
+                </div>
+                <h3>${item.title}</h3>
+                <p class="price">$${item.price}</p>
+                <button class="btn-buy">Hada Dalbo <i class="fa-solid fa-cart-shopping"></i></button>
+            `;
+            grid.appendChild(productCard);
+        });
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
